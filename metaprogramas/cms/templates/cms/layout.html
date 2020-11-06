@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Metaprogramas | {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'cms/vendor/css/bootstrap.min.css' %}">
+    {% block style %}{% endblock %}
+</head>
+<body>
+{% block content%}{% endblock %}
+        <script src="{% static 'cms/vendor/js/jquery-3.5.1.slim.min.js' %}"></script>
+        <script src="{% static 'cms/vendor/js/popper.min.js' %}"></script>
+        <script src="{% static 'cms/vendor/js/bootstrap.min.js' %}"></script>
+{% block script %}{% endblock %}
+</body>
+</html>

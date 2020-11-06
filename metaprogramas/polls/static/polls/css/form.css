@@ -1,0 +1,12 @@
+.card {
+       height: 700px !important;
+ }
+
+ .carousel-control-next, .carousel-control-prev {
+    width: 6% !important;
+ }
+
+ li {
+    list-style: none;
+    text-align: left
+ }

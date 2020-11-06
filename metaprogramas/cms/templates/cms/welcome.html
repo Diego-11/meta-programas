@@ -1,0 +1,21 @@
+{% extends 'cms/layout.html' %}
+
+{% load static %}
+
+{%block title %} {{ title }} {% endblock %}
+
+{% block style %}<link rel="stylesheet" href="{% static 'cms/css/welcome.css' %}">{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="jumbotron">
+        <h1 class="display-4">{{ screen.title }}</h1>
+        <p class="lead">{{ screen.content }}</p>
+        <hr class="my-4">
+        <p>Por eso, para conocer un poco más de ti, te invitamos a realizar nuestra encuesta, y de esta manera sabremos
+            como percibes el mundo.</p>
+        <a class="btn btn-outline-light btn-lg" href="login.html" role="button">Realizar encuesta</a>
+    </div>
+</div>
+
+{% endblock %}
