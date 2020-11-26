@@ -1,4 +1,6 @@
 /.env
+*.sqlite3
 /.idea
 *.pyc
 migrations/
+__pycache__/

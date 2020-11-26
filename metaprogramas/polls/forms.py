@@ -5,7 +5,6 @@ from django.forms import (Form,
                           Textarea,
                           ModelForm)
 
-from .models import AnsweredPolls
 
 
 class Multiple(MultipleChoiceField):
@@ -43,15 +42,6 @@ class PollForm(Form):
         ('f', 'Pienso en todo lo que tengo que hacer primero')
     ), label="Pregunta 3 - Cuando decido irme de vacaciones: ¿Qué hago?")
 
-    question_four = Multiple(choices=(
-        ('1', 'Ponerme en Forma'),
-        ('1', 'Evitar dolores o lesiones al hacer deporte'),
-        ('1', 'Adquirir una sensación de logro personal'),
-        ('1', 'Disfrutar del Ambiente'),
-        ('1', 'Liberar la presión del trabajo'),
-        ('1', 'Para no aumentar de peso')
-    ), label="Pregunta 4 - ")
-
     question_five = Multiple(choices=(
         ('a', 'Buscas aspectos de esta compra que sean similares a compras anteriores'),
         ('b', 'Usas el enfoque de descubrir en qué manera esto no llena tus necesidades'),
@@ -70,11 +60,6 @@ class PollForm(Form):
         ('e', 'Te encuentras a ti utilizando la expresión "Si, pero..."'),
         ('f', 'Encuentras que generalmente estás en compañía de gente que comparte tus ideas.')
     ), label="Pregunta 6 - En una conversación. ¿Cuáles de los siguientes aspectos aplica a ti?")
-
-    question_seven = CharField(required=False, widget=Textarea(
-        attrs={'cols': '60',
-               'rows': '15'}),
-        label="Escribe 3 o 4 oraciones que describan tu casa a quien no la conozca")
 
     question_eight = Multiple(choices=(
         ('a', 'Recordar las vacaciones que haz tenido'),
