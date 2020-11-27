@@ -46,3 +46,11 @@ class Polls(models.Model):
 
     def __str__(self):
         return f'{self.id} - {self.author} - {self.candidate.name}'
+
+
+class AnsweredPolls(models.Model):
+    poll = models.ForeignKey(Polls, on_delete=models.CASCADE)
+    file = models.FileField(verbose_name="Descargables", upload_to='answered/')
+
+    def __str__(self):
+        return self.poll.candidate.name

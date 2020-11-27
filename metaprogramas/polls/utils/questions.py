@@ -38,7 +38,7 @@ def total(value_one, value_two, value_three):
         int(value_two[1]) + \
         int(value_three[1])
 
-    result = {'derecha': p, 'izquierda': n}
+    result = {'d': p, 'i': n}
 
     return result
 
@@ -84,50 +84,25 @@ def past_present_future(question, options):
     return result
 
 
-def preferences(a, b, c):
+def sep_pref(question, values):
 
-    preferences = {'actividades': 0,
-                    'personas': 0,
-                    'objetos': 0,
-                    'lugares': 0,
-                    'tiempos': 0}
+    pref = [0, 0, 0, 0, 0]
+    print(question)
+    for i in range(len(question)):
 
-    for i in range(3):
+        if question[i] == values[0]:
+            pref[0] += 1
 
-        if a[i] == 'a':
-            preferences['actividades'] += 1
-        elif b[i] == 'b':
-            preferences['actividades'] += 1
-        elif c[i] == 'b':
-            preferences['actividades'] += 1
+        elif question[i] == values[1]:
+            pref[1] += 1
 
-        if a[i] == 'b':
-            preferences['personas'] += 1
-        elif b[i] == 'a':
-            preferences['personas'] += 1
-        elif c[i] == 'c':
-            preferences['personas'] += 1
+        elif question[i] == values[2]:
+            pref[2] += 1
 
-        if a[i] == 'c':
-            preferences['objetos'] += 1
-        elif b[i] == 'c':
-            preferences['objetos'] += 1
-        elif c[i] == 'd':
-            preferences['objetos'] += 1
+        elif question[i] == values[3]:
+            pref[3] += 1
 
-        if a[i] == 'd':
-            preferences['lugares'] += 1
-        elif b[i] == 'd':
-            preferences['lugares'] += 1
-        elif c[i] == 'e':
-            preferences['lugares'] += 1
+        elif question[i] == values[4]:
+            pref[4] += 1
 
-        if a[i] == 'e':
-            preferences['tiempos'] += 1
-        elif b[i] == 'e':
-            preferences['tiempos'] += 1
-        elif c[i] == 'a':
-            preferences['tiempos'] += 1
-
-
-    return preferences
+    return f"{pref[0]}-{pref[1]}-{pref[2]}-{pref[3]}-{pref[4]}"

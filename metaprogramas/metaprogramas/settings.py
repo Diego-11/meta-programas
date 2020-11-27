@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'wkhtmltopdf',
     'crispy_forms',
     'cms',
     'polls',
@@ -129,4 +130,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/media/pdf/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+WKHTMLTOPDF_CMD_OPTIONS = {
+    'quiet': True,
+}
