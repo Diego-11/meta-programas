@@ -8,6 +8,7 @@ from .utils.questions import (separate_options,
                               sep_pref)
 from .utils.split_values import split_values
 from .utils.pdf import generate_pdf
+from .utils.send_mail import send_user_mail
 
 
 # Create your views here.
@@ -126,27 +127,25 @@ def result(request, pk):
     int_ext = {'d': (int(question_ten['d']) + int(question_eleven['d'])),
                'i': (int(question_ten['i']) + int(question_eleven['i']))}
 
-    print(int_ext)
     ctx = {'poll': poll,
-     'question_one': question_one,
-     'question_two': question_two,
-     'question_three': question_three,
-     'question_four': question_four,
-     'question_five': question_five,
-     'question_six': question_six,
-     'question_seven': question_seven,
-     'question_eight': question_eight,
-     'question_nine': question_nine,
-     'question_ten': question_ten,
-     'question_eleven': question_eleven,
-     'acer_alej': acer_alej,
-     'sem_diff': sem_diff,
-     'pref': pref,
-     'int_ext': int_ext
-     }
+           'question_one': question_one,
+           'question_two': question_two,
+           'question_three': question_three,
+           'question_four': question_four,
+           'question_five': question_five,
+           'question_six': question_six,
+           'question_seven': question_seven,
+           'question_eight': question_eight,
+           'question_nine': question_nine,
+           'question_ten': question_ten,
+           'question_eleven': question_eleven,
+           'acer_alej': acer_alej,
+           'sem_diff': sem_diff,
+           'pref': pref,
+           'int_ext': int_ext
+           }
 
-    
+    if generate_pdf(ctx, poll.id):
+        send_user_mail(poll.candidate.email, pk)
+
     return render(request, 'polls/result.html', ctx)
-
-
-

@@ -130,9 +130,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = '/media/pdf/'
+MEDIA_ROOT = '/home/diego/Trabajo/metaprogramas/metaprogramas/media/pdf/'
+MEDIA_URL = '/media/pdf/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 WKHTMLTOPDF_CMD_OPTIONS = {
     'quiet': True,
 }
+
+
+EMAIL_HOST = 'smtp.googlemail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'diegoalvarez.cursos@gmail.com'
+EMAIL_HOST_PASSWORD = 'diegoandres11'
+EMAIL_USE_TLS = True
